@@ -4,14 +4,16 @@
 }
 textarea{
     width: 90%;
-    height: 19rem;
+    height: 180px;
     font-size: x-large;
     background-color: rgba(71, 164, 245, 0);
     border-radius: 10px;
     border: solid 1px white;
     color:black;
     margin-left: 65px;
+    margin-top: 20px;
     border-color: black;
+    resize: none;
 }
 
 textarea:hover{
@@ -35,8 +37,45 @@ button{
     border: solid 1px black;
     color: black;
     font-size: larger;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
 }
 .Space_bar{
-    padding-left: 5rem;
-    padding-right: 5rem;
+    width: 19rem;
+}
+.arrows{
+    width: 50px;
+    height: 50px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.up_arror {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.down_arrow {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.Delete{
+    width: 125px;
+}
+.Backspace{
+    width: 125px;
+}
+.Enter{
+    width: 125px;
+}
+.Shift{
+    width: 125px;
 }
