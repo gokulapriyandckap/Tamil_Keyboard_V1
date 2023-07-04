@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keyboard page</title>
+    <title>தமிழ் விசைப்பலகை</title>
+    <link rel="shortcut icon" href="keyboard logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="textarea">
@@ -14,19 +18,51 @@
         <table>
             <tr>
                 <div class="number_part">
-                    <td><button class="number">1</button></td>      
-                    <td><button class="number">2</button></td>
-                    <td><button class="number">3</button></td>
-                    <td><button class="number">4</button></td>
-                    <td><button class="number">5</button></td>
-                    <td><button class="number">6</button></td>
-                    <td><button class="number">7</button></td>
-                    <td><button class="number">8</button></td>
-                    <td><button class="number">9</button></td>
-                    <td><button class="number">0</button></td>
-                    <td><button class="number">-</button></td>
-                    <td><button class="number">=</button></td>
-                    <td><button class="Delete">Delete</button></td>
+                    <td><button class="buttonStyle">
+                        <div class="number">1</div>
+                        <div class="key">௧</div>
+                    </button></td>
+                    <td> <button class="buttonStyle">
+                        <div class="number">2</div>
+                        <div class="key">௨</div>
+                    </button></td>
+                    <td> <button class="buttonStyle">
+                        <div class="number">3</div>
+                        <div class="key">௩</div>
+                    </button></td>
+                    <td><button class="buttonStyle">
+                        <div class="number">4</div>
+                        <div class="key">௪</div>
+                    </button></td>
+                    <td><button class="buttonStyle">
+                        <div class="number">5</div>
+                        <div class="key">௫</div>
+                    </button></td>
+                    <td><button class="buttonStyle">
+                        <div class="number">6</div>
+                        <div class="key">௬</div>
+                    </button></td>
+                    <td><button class="buttonStyle">
+                        <div class="number">7</div>
+                        <div class="key">௭</div>
+                    </button></td>
+                    <td><button class="buttonStyle">
+                        <div class="number">8</div>
+                        <div class="key">௮</div>
+                    </button></td>
+                    <td> <button class="buttonStyle">
+                        <div class="number">9</div>
+                        <div class="key">௯</div>
+                    </button></td>
+                    <td> <button class="buttonStyle">
+                        <div class="number">0</div>
+                        <div class="key">௦</div>
+                    </button></td>
+                    <td><button class="number buttonStyle"><div class="number">-</div>
+                        <div class="key">_</div></button></td>
+                    <td><button class="number buttonStyle"><div class="number">+</div>
+                        <div class="key">=</div></button></td>
+                    <td><button class="Delete buttonStyle">Delete</button></td>
                 </div>
             </tr>
             <div class="letters_part">
@@ -43,8 +79,9 @@
                         <td><button class="mei_eluthu">ஞ</button></td>
                         <td><button class="mei_eluthu">ட</button></td>
                         <td><button class="mei_eluthu">ண</button></td>
-                        <td><button class="mei_eluthu">@</button></td>
-                        <td><button class="Backspace">Backspace</button></td>
+                        <td><button class="buttonStyle"><div class="number">!</div>
+                            <div class="key">@</div></button></td>
+                        <td><button class="Backspace buttonStyle">Backspace</button></td>
                     </div>
                 </tr>
                 <tr>
@@ -60,8 +97,9 @@
                         <td><button class="mei_eluthu">ம</button></td>
                         <td><button class="mei_eluthu">ய</button></td>
                         <td><button class="mei_eluthu">ர</button></td>
-                        <td><button class="mei_eluthu">&</button></td>
-                        <td><button class="Enter">Enter</button></td>
+                        <td><button class="buttonStyle"><div class="number">%</div>
+                            <div class="key">&</div></button></td>
+                        <td><button class="Enter buttonStyle">Enter</button></td>
                     </div>  
                 </tr>
                 <tr>
@@ -69,40 +107,40 @@
                         <td><button class="uyir_eluthu">எ</button></td>
                         <td><button class="uyir_eluthu">ஏ</button></td>
                         <td><button class="uyir_eluthu">ஐ</button></td>
-                        <td><button class="uyir_mei_eluthu">ெ</button></td>
-                        <td><button class="uyir_mei_eluthu">ே</button></td>
+                        <td><button id="first_letter" class="uyir_mei_eluthu">ெ</button></td>
+                        <td><button id="first_letter" class="uyir_mei_eluthu">ே</button></td>
                         <td><button class="mei_eluthu">ல</button></td>
                         <td><button class="mei_eluthu">வ</button></td>
                         <td><button class="mei_eluthu">ழ</button></td>
                         <td><button class="mei_eluthu">ள</button></td>
                         <td><button class="mei_eluthu">ற</button></td>
                         <td><button class="mei_eluthu">ன</button></td>
-                        <td><button class="mei_eluthu">:</button></td>
-                        <td><button class="Shift">Shift</button></td>
+                        <td><button class=" buttonStyle"><div class="number">;</div>
+                            <div class="key">:  </div></button>   </td>
+                        <td><button id="Shift" class="Shift buttonStyle">Shift</button></td>
                     </div>
-                </tr>
+                </tr>   
                 <tr>
                     <div class="fourth_row">
                         <td><button class="uyir_eluthu">ஒ</button></td>
                         <td><button class="uyir_eluthu">ஓ</button></td>
                         <td><button class="uyir_eluthu">ஔ</button></td>
-                        <td><button class="uyir_mei_eluthu">ை</button></td>
+                        <td><button id="first_letter" class="uyir_mei_eluthu">ை</button></td>
                         <td><button class="uyir_mei_eluthu">ா</button></td>
-                        <td><button class="mei_eluthu">ஜ</button></td>
-                        <td><button class="mei_eluthu">ஷ</button></td>
-                        <td><button class="mei_eluthu">ஸ</button></td>
-                        <td><button class="mei_eluthu">ஹ</button></td>
-                        <td> <button class="mei_eluthu">க்ஷ</button></td>
-                        <td><button class="mei_eluthu">ஸ்ரீ</button></td>
+                        <td><button class="vada_eluthu">ஜ</button></td>
+                        <td><button class="vada_eluthu">ஷ</button></td>
+                        <td><button class="vada_eluthu">ஸ</button></td>
+                        <td><button class="vada_eluthu">ஹ</button></td>
+                        <td> <button class="vada_eluthu">க்ஷ</button></td>
+                        <td><button class="vada_eluthu">ஸ்ரீ</button></td>
                         <td><button class="uyir_mei_eluthu">்</button></td>
                         <td>
-                            <div class="ab">
+                            <div style="display: flex;gap: 8px;">
                                 <button class="mei_eluthu">ஃ</button>
-                                <button class="mei_eluthu">\</button>   
+                                <button class=" buttonStyle"><div class="number">|</div>
+                                    <div class="key">\</div></button>   
                             </div>
-                            <!-- style="display: flex;margin: 5px;" -->
                         </td>
-                        
                     </div>
                 </tr>
             </div>
@@ -110,21 +148,27 @@
         <table>
             <tr>
                 <div class="special_characters">
-                    <td><button class="exclamation_mark">!</button></td>
-                    <td><button class="less_than_symbol"><</button></td>
-                    <td><button class="greater_than_symbol">></button></td>
-                    <td><button class="colon">:</button></td>
-                    <td><button class="Space_bar">Space</button></td>
-                    <td><button class="quote_symbol">"</button></td>
-                    <td><button class="question_mark">?</button></td>
-                    <td><button class="left_arrow">←</button></td>
+                    <td><button class="exclamation_mark buttonStyle"><div class="number">[</div>
+                        <div class="key">{</div></button></td>
+                    <td><button class="less_than_symbol buttonStyle"><div class="number">]</div>
+                        <div class="key">}</div></button></td>
+                    <td><button class="greater_than_symbol buttonStyle"><div class="number">(</div>
+                        <div class="key">/</div></button></td>
+                    <td><button class="colon buttonStyle"><div class="number">)</div>
+                        <div class="key">?</div></button></td>
+                    <td><button class="Space_bar buttonStyle">Space</button></td>
+                    <td><button class="quote_symbol buttonStyle"><div class="number"><</div>
+                        <div class="key">,</div></button></td>
+                    <td><button class="question_mark buttonStyle"><div class="number">></div>
+                        <div class="key">.</div></button></td>
+                    <td><button class="left_arrow buttonStyle">←</button></td>
                     <td>
                         <div class="arrows">
-                            <button class="up_arror">↑</button>
-                            <button class="down_arrow">↓</button>
+                            <button class="up_arror buttonStyle">↑</button>
+                            <button class="down_arrow buttonStyle">↓</button>
                         </div>
                     </td>
-                   <td> <button class="right_arrow">→</button></td>
+                   <td> <button class="right_arrow buttonStyle">→</button></td>
                 </div>  
             </tr>
         </table>
