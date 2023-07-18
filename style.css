@@ -115,6 +115,6 @@ button:active {
   font-size: larger;
   transform: translateY(4px);
 }
-.active{
+.toggle{
     background-color: green;
 }
