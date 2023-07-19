@@ -33,7 +33,7 @@ textarea:focus{
 }
 button{
     padding: 10px;
-    background-color: rgba(71, 164, 245, 0);
+    background-color: #4F5FEF;
     border-radius: 10px;
     border: solid 1px black;
     color: black;
@@ -41,6 +41,21 @@ button{
     width: 50px;
     height: 50px;
     margin: 5px;
+}
+.uyir_eluthu{
+    background-color: #00B8A2;
+}
+.symbols{
+    background-color: #555659;
+}
+.special_letter{
+    background-color: #555659;
+}
+.mei_eluthu{
+    background-color: #00B8A2;
+}
+.vada_eluthu{
+    background-color: #86BA66;
 }
 .Space_bar {
     width: 315px;
@@ -117,4 +132,8 @@ button:active {
 }
 .toggle{
     background-color: green;
+}
+.special_symbol{
+    background-color: #555659;
+
 }
