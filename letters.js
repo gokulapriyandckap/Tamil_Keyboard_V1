@@ -225,33 +225,85 @@ let uyirEluthu = document.querySelectorAll('.uyir_eluthu');
 let Enter = document.querySelector('.Enter');
 let Space_bar = document.querySelector('.Space_bar');
 let shift = document.querySelector('#Shift');
-
 let buttonStyle = document.querySelectorAll(".buttonStyle");
+let ayuthaEluthu = document.querySelector('.ayuthaeluthu');
+let vadaEluthukal = document.querySelectorAll('.vada_eluthu');
+let specialSybmols = document.querySelectorAll('.special_symbol');
+
+
+
+
+
+let letterArray = [];
+let special_symbol_clicked = false;
+
+for (let d = 0; d < specialSybmols.length; d++) {
+    specialSybmols[d].addEventListener('click',(e)=>{
+        special_symbol_clicked = true
+        letterArray.push(e.target.innerText)    
+        
+            for (let s = 0; s < meiEzhuthukal.length; s++) {
+                meiEzhuthukal[s].addEventListener('click',(e)=>{
+                    console.log("1");
+                    if (special_symbol_clicked) {
+                        // alert(e.target.innerText)
+                    letterArray.push(e.target.innerText)   
+                    textArea.focus();
+                    var cursorPos = $('textarea').prop('selectionStart');
+                    var textAreaValue = $('textarea').val();
+                    var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+                    var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+                    let completeLetterspecialSymbol = letterArray[1] + letterArray[0];
+                    // alert(completeLetterspecialSymbol)
+                    $('textarea').val(textBeforeLetter += completeLetterspecialSymbol + textAfterLetter);    
+                    letterArray = [];
+                    console.log(letterArray.length);
+                    // special_symbol_clicked = false
+            }
+                })   
+        }
+    }) 
+}
 
 
 
 for (let k = 0; k < uyirEluthu.length; k++) {
-    uyirEluthu[k].addEventListener('click',(e)=>{
+    textArea.focus();
+    uyirEluthu[k].addEventListener('click', (e) => {
         textArea.value += e.target.innerText;
-})
+    })
 }
 
-Space_bar.addEventListener('click',()=>{
+Space_bar.addEventListener('click', () => {
+    textArea.focus();
     textArea.value += ' ';
 })
 
 
 // for delete all the texts in textarea.
-deletebtn.addEventListener('click',()=>{
-    textArea.value ='';
+deletebtn.addEventListener('click', () => {
+    textArea.focus();
+    textArea.value = '';
 })
+
 // for delete  the text by lastindex in textarea.
-backspace.addEventListener('click',()=>{
-        textArea.value = textArea.value.slice(0,-1); 
+backspace.addEventListener('click', () => {
+    textArea.focus();
+    var cursorPos = $('textarea').prop('selectionStart');
+    var textAreaValue = $('textarea').val();
+    let indexofLetter = textAreaValue.substring(cursorPos - 1, cursorPos);
+    $("textarea").val(textArea.value.replace(indexofLetter, ""))
 })
+
+
 //Add the new line in textarea
-Enter.addEventListener('click',()=>{
-    textArea.value += "\n"
+Enter.addEventListener('click', () => {
+    textArea.focus();
+    var cursorPos = $('textarea').prop('selectionStart');
+    var textAreaValue = $('textarea').val();
+    var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+    var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+    $('textarea').val(textBeforeLetter += "\n" + textAfterLetter);
 })
 
 let isMeiEzthuCLicked = false;
@@ -259,21 +311,43 @@ let mei_eluthu_Value = '';
 let mei_eluthu_id = '';
 let symbols_id = '';
 
+
+
+// for (let d = 0; d < specialSybmols.length; d++) {
+//     specialSybmols[d].addEventListener('click', (e) => {
+//         special_symbol_clicked = true;
+//         letterArray.push(e.target.innerText);
+//     })
+// }
+
+
+// if (special_symbol_clicked) {    
 for (let i = 0; i < meiEzhuthukal.length; i++) {
     meiEzhuthukal[i].addEventListener('click', (e) => {
+        // alert()
+        console.log("222");
         mei_eluthu_id = Number(e.target.getAttribute('data-key'));
         mei_eluthu_Value = e.target.innerText;
         isMeiEzthuCLicked = true;
-        textArea.value += mei_eluthu_Value;
-
+        textArea.focus();
+        var cursorPos = $('textarea').prop('selectionStart');
+        var textAreaValue = $('textarea').val();
+        var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+        var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+        $('textarea').val(textBeforeLetter += mei_eluthu_Value + textAfterLetter);
 
         for (let j = 0; j < symbols.length; j++) {
             symbols[j].addEventListener('click', (e) => {
                 if (isMeiEzthuCLicked === true) {
                     symbols_id = Number(e.target.id)
                     let formula = mei_eluthu_id + (symbols_id * 18);
-                    textArea.value = textArea.value.slice(0,-1)
-                    textArea.value += letters[formula];
+                    textArea.value = textArea.value.slice(0, -1)
+                    textArea.focus();
+                    var cursorPos = $('textarea').prop('selectionStart');
+                    var textAreaValue = $('textarea').val();
+                    var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+                    var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+                    $('textarea').val(textBeforeLetter += letters[formula] + textAfterLetter);
                     mei_eluthu_Value = '';
                     mei_eluthu_id = '';
                     symbols_id = '';
@@ -283,29 +357,85 @@ for (let i = 0; i < meiEzhuthukal.length; i++) {
         }
     })
 }
+// }
+
+let vada_eluthu_clicked = false;
+for (let n = 0; n < vadaEluthukal.length; n++) {
+    vadaEluthukal[n].addEventListener('click', (e) => {
+        textArea.focus();
+        vada_eluthu_clicked = true;
+        var cursorPos = $('textarea').prop('selectionStart');
+        var textAreaValue = $('textarea').val();
+        var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+        var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+        $('textarea').val(textBeforeLetter += e.target.innerText + textAfterLetter);
+        let vadaEluthu = e.target.innerText;
+
+        for (let a = 0; a < symbols.length; a++) {
+            symbols[a].addEventListener('click', (e) => {
+                if (vada_eluthu_clicked) {
+                    textArea.focus();
+                    textArea.value = textArea.value.slice(0, -1)
+                    var cursorPos = $('textarea').prop('selectionStart');
+                    var textAreaValue = $('textarea').val();
+                    var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+                    var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+                    let completeLetter = vadaEluthu + e.target.innerText;
+                    $('textarea').val(textBeforeLetter += completeLetter + textAfterLetter);
+                    vadaEluthu = ''
+                }
+            })
+        }
+    })
+}
 
 
 let flag = false;
-
-shift.addEventListener("click",()=>{
-    if(!flag){
+shift.addEventListener("click", () => {
+    if (!flag) {
         flag = true
     }
-    else if(flag == true){
+    else if (flag == true) {
         flag = false
     }
     shift.classList.toggle('toggle')
 })
 
 for (let l = 0; l < buttonStyle.length; l++) {
-    console.log(l);
-   buttonStyle[l].addEventListener('click',()=>{
-        if(flag){
-        textArea.value += buttonStyle[l].children[1].innerText       
-    }
-    else{
-        textArea.value += buttonStyle[l].children[0].innerText
-    }
-   })
-    
+    buttonStyle[l].addEventListener('click', () => {
+        if (flag) {
+            textArea.focus();
+            var cursorPos = $('textarea').prop('selectionStart');
+            var textAreaValue = $('textarea').val();
+            var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+            var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+            $('textarea').val(textBeforeLetter += buttonStyle[l].children[0].innerText + textAfterLetter);
+        }
+        else {
+            textArea.focus();
+            var cursorPos = $('textarea').prop('selectionStart');
+            var textAreaValue = $('textarea').val();
+            var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+            var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+            $('textarea').val(textBeforeLetter += buttonStyle[l].children[1].innerText + textAfterLetter);
+        }
+    })
 }
+
+// let allLetters = ["க","ங","ச","ஞ","ட","ண","த","ந","ப","ம","ய","ர","ல","வ","ழ","ள","ற","ன","ஜ","ஷ","ஸ","ஹ","க்ஷ","ஸ்ரீ"]
+
+ayuthaEluthu.addEventListener('click', (e) => {
+    textArea.focus();
+    var cursorPos = $('textarea').prop('selectionStart');
+    var textAreaValue = $('textarea').val();
+    var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+    var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+    $('textarea').val(textBeforeLetter += e.target.innerText + textAfterLetter);
+})
+
+
+
+
+
+
+
