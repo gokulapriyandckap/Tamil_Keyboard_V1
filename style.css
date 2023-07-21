@@ -43,7 +43,7 @@ button{
     margin: 5px;
 }
 .uyir_eluthu{
-    background-color: #00B8A2;
+    background-color: #007264;
 }
 .symbols{
     background-color: #555659;
@@ -59,6 +59,12 @@ button{
 }
 .Space_bar {
     width: 315px;
+}
+.ayuthaeluthu{
+    background-color: #007264;
+}
+#ikk{
+    background-color: #007264;
 }
 .arrows {
     width: 60px;
@@ -96,7 +102,6 @@ button{
     width: 125px;
 }
 .key{
-    /* margin-top: -5px; */
     line-height: 20px;
     text-align: center;
 }
