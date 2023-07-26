@@ -244,35 +244,18 @@ shree.addEventListener('click',(e)=>{
 
 
 
-// for (let c = 0; c < meiEzhuthukal.length; c++) {
-//     meiEzhuthukal[c].addEventListener('click',(e)=>{
-//         mei = e.target.innerText; 
-//         ikk.addEventListener('click',(a)=>{
-//             completeUyireMei = mei + a.target.innerText;
-//             var cursorPos = $('textarea').prop('selectionStart');
-//         var textAreaValue = $('textarea').val();
-//         var textBeforeLetter = textAreaValue.substring(0, cursorPos);
-//         var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-//         textArea.value = textArea.value.slice(0,-1);
-//         $('textarea').val(textBeforeLetter += completeUyireMei  + textAfterLetter);
-//         })
-//     })
-
-// }
-
-
-
+// for 
 let letterArray = [];
 let special_symbol_clicked = false;
 
 for (let d = 0; d < specialSybmols.length; d++) {
     specialSybmols[d].addEventListener('click', (e) => {
-        special_symbol_clicked = true
-        letterArray.push(e.target.innerText)
+        special_symbol_clicked = true;
+        letterArray.push(e.target.innerText);
         for (let s = 0; s < meiEzhuthukal.length; s++) {
             meiEzhuthukal[s].addEventListener('click', (e) => {
                 if (special_symbol_clicked) {
-                    letterArray.push(e.target.innerText)
+                    letterArray.push(e.target.innerText);
                     textArea.focus();
                     var cursorPos = $('textarea').prop('selectionStart');
                     var textAreaValue = $('textarea').val();
@@ -281,7 +264,6 @@ for (let d = 0; d < specialSybmols.length; d++) {
                     let completeLetterspecialSymbol = letterArray[1] + letterArray[0];
                     $('textarea').val(textBeforeLetter += completeLetterspecialSymbol + textAfterLetter);
                     letterArray = [];
-                    // alert(letterArray.length);
                     special_symbol_clicked = false
                 }
             })
@@ -290,7 +272,7 @@ for (let d = 0; d < specialSybmols.length; d++) {
 }
 
 
-
+// for uyir eluthu.
 for (let k = 0; k < uyirEluthu.length; k++) {
     uyirEluthu[k].addEventListener('click', (e) => {
     textArea.focus();
@@ -341,9 +323,9 @@ let mei_eluthu_Value = '';
 let mei_eluthu_id = '';
 let symbols_id = '';
 
-if (!special_symbol_clicked) {   
 for (let i = 0; i < meiEzhuthukal.length; i++) {
     meiEzhuthukal[i].addEventListener('click', (e) => {
+if (!special_symbol_clicked) {   
         mei_eluthu_id = Number(e.target.getAttribute('data-key'));
         mei_eluthu_Value = e.target.innerText;
         isMeiEzthuCLicked = true;
@@ -388,11 +370,12 @@ for (let i = 0; i < meiEzhuthukal.length; i++) {
                             isMeiEzthuCLicked = false;
                         }
                 }
+                
                }
             })
+}
         }
     })
-}
 }
 
 
@@ -527,6 +510,32 @@ ayuthaEluthu.addEventListener('click', (e) => {
 //             }
 //             })
             
+//         }
+//     })
+// }
+
+// let VadaLetterArray = [];
+// let special_symbol_clicked_vadaeluthu = false;
+
+// for (let e = 0; e < specialSybmols.length; e++) {
+//     specialSybmols[e].addEventListener('click', (e) => {
+//         special_symbol_clicked_vadaeluthu = true
+//         VadaLetterArray.push(e.target.innerText)
+//         for (let w = 0; w < vadaEluthukal.length; w++) {
+//             vadaEluthukal[w].addEventListener('click', (e) => {
+//                 if (!special_symbol_clicked_vadaeluthu) {
+//                     VadaLetterArray.push(e.target.innerText)
+//                     textArea.focus();
+//                     var cursorPos = $('textarea').prop('selectionStart');
+//                     var textAreaValue = $('textarea').val();
+//                     var textBeforeLetter = textAreaValue.substring(0, cursorPos);
+//                     var textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+//                     let completeLetterspecialSymbolVadaeluthu = VadaLetterArray[1] + VadaLetterArray[0];
+//                     $('textarea').val(textBeforeLetter += completeLetterspecialSymbolVadaeluthu + textAfterLetter);
+//                     VadaLetterArray = [];
+//                     special_symbol_clicked_vadaeluthu = false
+//                 }
+//             })
 //         }
 //     })
 // }

@@ -1,7 +1,12 @@
+/* <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> */
+
 *{
     padding: auto;
     margin: 0 auto;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    /* font-family: 'Be Vietnam Pro', sans-serif;
+     */
+     font-family: 'Poppins', sans-serif;
 }
 textarea{
     width: 90%;
