@@ -248,6 +248,7 @@ shree.addEventListener('click', (e) => {
 // for special Symbol Meiluthukal.
 let letterArray = [];
 let special_symbol_clicked = false;
+let thunaiKaalClicked = false;
 
 for (let d = 0; d < specialSybmols.length; d++) {
     specialSybmols[d].addEventListener('click', (e) => {
@@ -267,7 +268,11 @@ for (let d = 0; d < specialSybmols.length; d++) {
                     letterArray = [];
                     let countLetterArray = letterArray.length;
                     if (countLetterArray == 0) {
-                        thunaiKaal.addEventListener('click', (e) => {
+                        // if (thunaiKaalClicked) {
+                        thunaiKaal.addEventListener('click', (e) => {   
+                            thunaiKaalClicked = true      
+                         if (thunaiKaalClicked) {
+                            // alert(thunaiKaalClicked)
                             let thunaiKaalValue = e.target.innerText;
                             textArea.focus();
                             let cursorPos = $('textarea').prop('selectionStart');
@@ -276,13 +281,15 @@ for (let d = 0; d < specialSybmols.length; d++) {
                             let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);// let completethunaiKaalLetter = completeLetterspecialSymbol + e.target.innerText;
                             $('textarea').val(textBeforeLetter += thunaiKaalValue + textAfterLetter);
                             // textArea.value += thunaiKaalValue ;
-                            special_symbol_clicked = false
+                            special_symbol_clicked = false;
+                            thunaiKaalClicked = false;
+                    }
                         })
                         // thunaiKaalValue = " ";
-
                     }
-                    special_symbol_clicked = false
                 }
+                    special_symbol_clicked = false
+                // }
             })
         }
     })
@@ -336,37 +343,37 @@ Enter.addEventListener('click', () => {
 
 
 // for special symbols vadaeluthukal 
-// let VadaLetterArray = [];
-// let special_symbol_clicked_vadaeluthu = false;
+let VadaLetterArray = [];
+let special_symbol_clicked_vadaeluthu = false;
 
-// for (let e = 0; e < specialSybmols.length; e++) {
-//     specialSybmols[e].addEventListener('click', (e) => {
-//         special_symbol_clicked_vadaeluthu = true
-//         VadaLetterArray.push(e.target.innerText)
-//         // alert(e.target.innerText)
-//         for (let w = 0; w < vadaEluthukal.length; w++) {
-//             vadaEluthukal[w].addEventListener('click', (e) => {
-//                 if (special_symbol_clicked_vadaeluthu) {
-//                     // alert(special_symbol_clicked_vadaeluthu)
-//                     if (special_symbol_clicked) {
-//                         // alert(special_symbol_clicked)
-//                         VadaLetterArray.push(e.target.innerText)
-//                         textArea.focus();
-//                         let cursorPos = $('textarea').prop('selectionStart');
-//                         let textAreaValue = $('textarea').val();
-//                         let textBeforeLetter = textAreaValue.substring(0, cursorPos);
-//                         let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-//                         let completeLetterspecialSymbolVadaeluthu = VadaLetterArray[1] + VadaLetterArray[0];
-//                         alert(completeLetterspecialSymbolVadaeluthu)
-//                         $('textarea').val(textBeforeLetter += completeLetterspecialSymbolVadaeluthu + textAfterLetter);
-//                         VadaLetterArray = [];
-//                         special_symbol_clicked_vadaeluthu = false
-//                     }
-//                 }
-//             })
-//         }
-//     })
-// }
+for (let e = 0; e < specialSybmols.length; e++) {
+    specialSybmols[e].addEventListener('click', (e) => {
+        special_symbol_clicked_vadaeluthu = true
+        VadaLetterArray.push(e.target.innerText)
+        // alert(e.target.innerText)
+        for (let w = 0; w < vadaEluthukal.length; w++) {
+            vadaEluthukal[w].addEventListener('click', (e) => {
+                if (special_symbol_clicked_vadaeluthu) {
+                    // alert(special_symbol_clicked_vadaeluthu)
+                    if (special_symbol_clicked) {
+                        // alert(special_symbol_clicked)
+                        VadaLetterArray.push(e.target.innerText)
+                        textArea.focus();
+                        let cursorPos = $('textarea').prop('selectionStart');
+                        let textAreaValue = $('textarea').val();
+                        let textBeforeLetter = textAreaValue.substring(0, cursorPos);
+                        let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+                        let completeLetterspecialSymbolVadaeluthu = VadaLetterArray[1] + VadaLetterArray[0];
+                        alert(completeLetterspecialSymbolVadaeluthu)
+                        $('textarea').val(textBeforeLetter += completeLetterspecialSymbolVadaeluthu + textAfterLetter);
+                        VadaLetterArray = [];
+                        special_symbol_clicked_vadaeluthu = false
+                    }
+                }
+            })
+        }
+    })
+}
 
 // For MeiEluthukal Symbols.
 let isMeiEzthuCLicked = false;
@@ -432,55 +439,55 @@ for (let i = 0; i < meiEzhuthukal.length; i++) {
 
 
 // For Vadaeluthukal normal symbols. 
-let vada_eluthu_clicked = false;
-for (let n = 0; n < vadaEluthukal.length; n++) {
-    vadaEluthukal[n].addEventListener('click', (e) => {
-        if (!special_symbol_clicked_vadaeluthu) {
+// let vada_eluthu_clicked = false;
+// for (let n = 0; n < vadaEluthukal.length; n++) {
+//     vadaEluthukal[n].addEventListener('click', (e) => {
+//         if (!special_symbol_clicked_vadaeluthu) {
 
-            textArea.focus();
-            vada_eluthu_clicked = true;
-            let cursorPos = $('textarea').prop('selectionStart');
-            let textAreaValue = $('textarea').val();
-            let textBeforeLetter = textAreaValue.substring(0, cursorPos);
-            let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-            $('textarea').val(textBeforeLetter += e.target.innerText + textAfterLetter);
-            let vadaEluthu = e.target.innerText;
-        }
-        for (let a = 0; a < symbols.length; a++) {
-            symbols[a].addEventListener('click', (e) => {
-                if (vada_eluthu_clicked) {
-                    if (e.target.innerText === "்") {
-                        textArea.focus();
-                        textArea.value = textArea.value.slice(0, -1);
-                        let cursorPos = $('textarea').prop('selectionStart');
-                        let textAreaValue = $('textarea').val();
-                        let textBeforeLetter = textAreaValue.substring(0, cursorPos);
-                        let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-                        let completeLetter = vadaEluthu + e.target.innerText;
-                        alert(completeLetter)
-                        console.log(completeLetter);
-                        $('textarea').val(textBeforeLetter += completeLetter + textAfterLetter);
-                        vadaEluthu = '';
-                        completeLetter = '';
-                    }
-                    else {
-                        textArea.focus();
-                        textArea.value = textArea.value.slice(0, -1)
-                        let cursorPos = $('textarea').prop('selectionStart');
-                        let textAreaValue = $('textarea').val();
-                        let textBeforeLetter = textAreaValue.substring(0, cursorPos);
-                        let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-                        let completeLetter_ikkk = vadaEluthu + e.target.innerText;
-                        alert(completeLetter_ikkk)
-                        $('textarea').val(textBeforeLetter += completeLetter_ikkk + textAfterLetter);
-                        vadaEluthu = '';
-                        completeLetter = '';
-                    }
-                }
-            })
-        }
-    })
-}
+//             textArea.focus();
+//             vada_eluthu_clicked = true;
+//             let cursorPos = $('textarea').prop('selectionStart');
+//             let textAreaValue = $('textarea').val();
+//             let textBeforeLetter = textAreaValue.substring(0, cursorPos);
+//             let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+//             $('textarea').val(textBeforeLetter += e.target.innerText + textAfterLetter);
+//             let vadaEluthu = e.target.innerText;
+//         }
+//         for (let a = 0; a < symbols.length; a++) {
+//             symbols[a].addEventListener('click', (e) => {
+//                 if (vada_eluthu_clicked) {
+//                     if (e.target.innerText === "்") {
+//                         textArea.focus();
+//                         textArea.value = textArea.value.slice(0, -1);
+//                         let cursorPos = $('textarea').prop('selectionStart');
+//                         let textAreaValue = $('textarea').val();
+//                         let textBeforeLetter = textAreaValue.substring(0, cursorPos);
+//                         let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+//                         let completeLetter = vadaEluthu + e.target.innerText;
+//                         alert(completeLetter)
+//                         console.log(completeLetter);
+//                         $('textarea').val(textBeforeLetter += completeLetter + textAfterLetter);
+//                         vadaEluthu = '';
+//                         completeLetter = '';
+//                     }
+//                     else {
+//                         textArea.focus();
+//                         textArea.value = textArea.value.slice(0, -1)
+//                         let cursorPos = $('textarea').prop('selectionStart');
+//                         let textAreaValue = $('textarea').val();
+//                         let textBeforeLetter = textAreaValue.substring(0, cursorPos);
+//                         let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
+//                         let completeLetter_ikkk = vadaEluthu + e.target.innerText;
+//                         alert(completeLetter_ikkk)
+//                         $('textarea').val(textBeforeLetter += completeLetter_ikkk + textAfterLetter);
+//                         vadaEluthu = '';
+//                         completeLetter = '';
+//                     }
+//                 }
+//             })
+//         }
+//     })
+// }
 
 
 let flag = false;
