@@ -269,26 +269,26 @@ for (let d = 0; d < specialSybmols.length; d++) {
                     let countLetterArray = letterArray.length;
                     if (countLetterArray == 0) {
                         // if (thunaiKaalClicked) {
-                        thunaiKaal.addEventListener('click', (e) => {   
-                            thunaiKaalClicked = true      
-                         if (thunaiKaalClicked) {
-                            // alert(thunaiKaalClicked)
-                            let thunaiKaalValue = e.target.innerText;
-                            textArea.focus();
-                            let cursorPos = $('textarea').prop('selectionStart');
-                            let textAreaValue = $('textarea').val();
-                            let textBeforeLetter = textAreaValue.substring(0, cursorPos);
-                            let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);// let completethunaiKaalLetter = completeLetterspecialSymbol + e.target.innerText;
-                            $('textarea').val(textBeforeLetter += thunaiKaalValue + textAfterLetter);
-                            // textArea.value += thunaiKaalValue ;
-                            special_symbol_clicked = false;
-                            thunaiKaalClicked = false;
-                    }
+                        thunaiKaal.addEventListener('click', (e) => {
+                            thunaiKaalClicked = true
+                            if (thunaiKaalClicked) {
+                                // alert(thunaiKaalClicked)
+                                let thunaiKaalValue = e.target.innerText;
+                                textArea.focus();
+                                let cursorPos = $('textarea').prop('selectionStart');
+                                let textAreaValue = $('textarea').val();
+                                let textBeforeLetter = textAreaValue.substring(0, cursorPos);
+                                let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);// let completethunaiKaalLetter = completeLetterspecialSymbol + e.target.innerText;
+                                $('textarea').val(textBeforeLetter += thunaiKaalValue + textAfterLetter);
+                                // textArea.value += thunaiKaalValue ;
+                                special_symbol_clicked = false;
+                                thunaiKaalClicked = false;
+                            }
                         })
                         // thunaiKaalValue = " ";
                     }
                 }
-                    special_symbol_clicked = false
+                special_symbol_clicked = false
                 // }
             })
         }
@@ -411,6 +411,11 @@ for (let i = 0; i < meiEzhuthukal.length; i++) {
                             completeLetter_ikk = '';
                             mei_eluthu_Value = '';
                         }
+                        // else if(e.target.innerText == "ா"){
+                        //     completeLetter_ikk = mei_eluthu_Value + e.target.innerText;
+                        //     completeLetter_ikk = "";
+                        //     mei_eluthu_Value = "";
+                        // }
                         else {
                             if (mei_eluthu_Value !== '') {
                                 symbols_id = Number(e.target.id)
@@ -450,8 +455,8 @@ for (let i = 0; i < meiEzhuthukal.length; i++) {
 //             let textAreaValue = $('textarea').val();
 //             let textBeforeLetter = textAreaValue.substring(0, cursorPos);
 //             let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-//             $('textarea').val(textBeforeLetter += e.target.innerText + textAfterLetter);
 //             let vadaEluthu = e.target.innerText;
+//             $('textarea').val(textBeforeLetter += vadaEluthu + textAfterLetter);
 //         }
 //         for (let a = 0; a < symbols.length; a++) {
 //             symbols[a].addEventListener('click', (e) => {
@@ -509,7 +514,7 @@ for (let l = 0; l < buttonStyle.length; l++) {
             let textAreaValue = $('textarea').val();
             let textBeforeLetter = textAreaValue.substring(0, cursorPos);
             let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-            $('textarea').val(textBeforeLetter += buttonStyle[l].children[0].innerText + textAfterLetter);
+            $('textarea').val(textBeforeLetter += buttonStyle[l].children[1].innerText + textAfterLetter);
         }
         else {
             textArea.focus();
@@ -517,7 +522,7 @@ for (let l = 0; l < buttonStyle.length; l++) {
             let textAreaValue = $('textarea').val();
             let textBeforeLetter = textAreaValue.substring(0, cursorPos);
             let textAfterLetter = textAreaValue.substring(cursorPos, textAreaValue.length);
-            $('textarea').val(textBeforeLetter += buttonStyle[l].children[1].innerText + textAfterLetter);
+            $('textarea').val(textBeforeLetter += buttonStyle[l].children[0].innerText + textAfterLetter);
         }
     })
 }
