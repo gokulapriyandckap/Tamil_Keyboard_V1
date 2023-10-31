@@ -11,371 +11,193 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
-
 <body>
-    <div class="textarea">
-        <textarea></textarea>
-    </div>
+    <h1>தமிழ் விசைப்பலகை</h1>
+    <div class="overAll_container">
+        <div class="textarea suggesDiv">
+            <textarea></textarea>
+            <div class="suggestionDiv">
+                <ul class="suggestion">
 
-    <!-- main content -->
-    <!-- <div class="container">
-        <table>
-            <tr>
-                <div class="number_part">
-                    <td><button class="buttonStyle">
-                            <div class="number">1</div>
-                            <div class="key">௧</div>
-                        </button></td>
-                    <td> <button class="buttonStyle">
-                            <div class="number">2</div>
-                            <div class="key">௨</div>
-                        </button></td>
-                    <td> <button class="buttonStyle">
-                            <div class="number">3</div>
-                            <div class="key">௩</div>
-                        </button></td>
-                    <td><button class="buttonStyle">
-                            <div class="number">4</div>
-                            <div class="key">௪</div>
-                        </button></td>
-                    <td><button class="buttonStyle">
-                            <div class="number">5</div>
-                            <div class="key">௫</div>
-                        </button></td>
-                    <td><button class="buttonStyle">
-                            <div class="number">6</div>
-                            <div class="key">௬</div>
-                        </button></td>
-                    <td><button class="buttonStyle">
-                            <div class="number">7</div>
-                            <div class="key">௭</div>
-                        </button></td>
-                    <td><button class="buttonStyle">
-                            <div class="number">8</div>
-                            <div class="key">௮</div>
-                        </button></td>
-                    <td> <button class="buttonStyle">
-                            <div class="number">9</div>
-                            <div class="key">௯</div>
-                        </button></td>
-                    <td> <button class="buttonStyle">
-                            <div class="number">0</div>
-                            <div class="key">௦</div>
-                        </button></td>
-                    <td><button class="number buttonStyle">
-                            <div class="number">-</div>
-                            <div class="key">_</div>
-                        </button></td>
-                    <td><button class="number buttonStyle">
-                            <div class="number">+</div>
-                            <div class="key">=</div>
-                        </button></td>
-                    <td><button class="Delete buttonStyle">Delete</button></td>
-                </div>
-            </tr>
-            <div class="letters_part">
-                <tr>
-                    <div class="first_row">
-                        <td><button class="uyir_eluthu">அ</button></td>
-                        <td><button class="uyir_eluthu">ஆ</button></td>
-                        <td><button class="uyir_eluthu">இ</button></td>
-                        <td><button class="symbols" id="2">ி</button></td>
-                        <td><button class="symbols" id="3">ீ</button></td>
-                        <td><button class="mei_eluthu" data-key="1">க</button></td>
-                        <td><button class="mei_eluthu" data-key="2">ங</button></td>
-                        <td><button class="mei_eluthu" data-key="3">ச</button></td>
-                        <td><button class="mei_eluthu" data-key="4">ஞ</button></td>
-                        <td><button class="mei_eluthu" data-key="5">ட</button></td>
-                        <td><button class="mei_eluthu" data-key="6">ண</button></td>
-                        <td><button class="buttonStyle">
-                                <div class="number">!</div>
-                                <div class="key">@</div>
-                            </button></td>
-                        <td><button class="Backspace buttonStyle">Backspace</button></td>
-                    </div>
-                </tr>
-                <tr>
-                    <div class="second_row">
-                        <td><button class="uyir_eluthu">ஈ</button></td>
-                        <td><button class="uyir_eluthu">உ</button></td>
-                        <td><button class="uyir_eluthu">ஊ</button></td>
-                        <td><button class="symbols" id="4">ு</button></td>
-                        <td><button class="symbols" id="5">ூ</button></td>
-                        <td><button class="mei_eluthu" data-key="7">த</button></td>
-                        <td><button class="mei_eluthu" data-key="8">ந</button></td>
-                        <td><button class="mei_eluthu" data-key="9">ப</button></td>
-                        <td><button class="mei_eluthu" data-key="10">ம</button></td>
-                        <td><button class="mei_eluthu" data-key="11">ய</button></td>
-                        <td><button class="mei_eluthu" data-key="12">ர</button></td>
-                        <td><button class="buttonStyle">
-                                <div class="number">%</div>
-                                <div class="key">&</div>
-                            </button></td>
-                        <td><button class="Enter buttonStyle">Enter</button></td>
-                    </div>
-                </tr>
-                <tr>
-                    <div class="third_row">
-                        <td><button class="uyir_eluthu">எ</button></td>
-                        <td><button class="uyir_eluthu">ஏ</button></td>
-                        <td><button class="uyir_eluthu">ஐ</button></td>
-                        <td><button id="6" class="special_symbol">ெ</button></td>
-                        <td><button id="7" class="special_symbol">ே</button></td>
-                        <td><button class="mei_eluthu" data-key="13">ல</button></td>
-                        <td><button class="mei_eluthu" data-key="14">வ</button></td>
-                        <td><button class="mei_eluthu" data-key="15">ழ</button></td>
-                        <td><button class="mei_eluthu" data-key="16">ள</button></td>
-                        <td><button class="mei_eluthu" data-key="17">ற</button></td>
-                        <td><button class="mei_eluthu" data-key="18">ன</button></td>
-                        <td><button class=" buttonStyle">
-                                <div class="number">;</div>
-                                <div class="key">: </div>
-                            </button> </td>
-                        <td><button id="Shift" class="Shift">Shift</button></td>
-                    </div>
-                </tr>
-                <tr>
-                    <div class="fourth_row">
-                        <td><button class="uyir_eluthu">ஒ</button></td>
-                        <td><button class="uyir_eluthu">ஓ</button></td>
-                        <td><button class="uyir_eluthu">ஔ</button></td>
-                        <td><button id="" class="special_symbol">ை</button></td>
-                        <td><button class="symbols" id="1"> ா</button></td>
-                        <td><button class="vada_eluthu">ஜ</button></td>
-                        <td><button class="vada_eluthu">ஷ</button></td>
-                        <td><button class="vada_eluthu">ஸ</button></td>
-                        <td><button class="vada_eluthu">ஹ</button></td>
-                        <td> <button class="vada_eluthu">க்ஷ</button></td>
-                        <td><button class="shree">ஸ்ரீ</button></td>
-                        <td><button id="ikk" class="symbols">்</button></td>
-                        <td>
-                            <div style="display: flex;gap: 8px;">
-                                <button class="ayuthaeluthu">ஃ</button>
-                                <button class=" buttonStyle">
-                                    <div class="number">|</div>
-                                    <div class="key">\</div>
-                                </button>
-                            </div>
-                        </td>
-                    </div>
-                </tr>
+                </ul>
+                <!-- <span class="material-symbols-outlined">arrow_drop_down</span> -->
             </div>
-        </table>
-        <table>
-            <tr>
-                <div class="special_characters">
-                    <td><button class="exclamation_mark buttonStyle">
-                            <div class="number">[</div>
-                            <div class="key">{</div>
-                        </button></td>
-                    <td><button class="less_than_symbol buttonStyle">
-                            <div class="number">]</div>
-                            <div class="key">}</div>
-                        </button></td>
-                    <td><button class="greater_than_symbol buttonStyle">
-                            <div class="number">(</div>
-                            <div class="key">/</div>
-                        </button></td>
-                    <td><button class="colon buttonStyle">
-                            <div class="number">)</div>
-                            <div class="key">?</div>
-                        </button></td>
-                    <td><button class="Space_bar buttonStyle">Space</button></td>
-                    <td><button class="quote_symbol buttonStyle">
-                            <div class="number">
-                            </div>
-                            <div class="key">,</div>
-                        </button></td>
-                    <td><button class="question_mark buttonStyle">
-                            <div class="number">></div>
-                            <div class="key">.</div>
-                        </button></td>
-                    <td><button class="left_arrow buttonStyle">←</button></td>
-                    <td>
-                        <div class="arrows">
-                            <button class="up_arror buttonStyle">↑</button>
-                            <button class="down_arrow buttonStyle">↓</button>
-                        </div>
-                    </td>
-                    <td> <button class="right_arrow buttonStyle">→</button></td>
-                </div>
-            </tr>
-        </table>
-    </div> -->
+        </div>
+        <br>
+        <div class="container">
+            <div class="boxContainer">
+                <div class="topPortion">
+                    <button class="keys buttonStyle">
+                        <div class="key">௧</div>
+                        <div class="number">1</div>
+                    </button>
+                    <button class="keys buttonStyle ">
+                        <div class="key">௨</div>
+                        <div class="number">2</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">௩</div>
+                        <div class="number">3</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">௪</div>
+                        <div class="number">4</div>
 
-    <!-- sanjay work -->
-    <div class="container">
-        <div class="boxContainer">
-            <div class="topPortion">
-                <button class="keys buttonStyle">
-                    <div class="key">௧</div>
-                    <div class="number">1</div>
-                </button>
-                <button class="keys buttonStyle ">
-                    <div class="key">௨</div>
-                    <div class="number">2</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௩</div>
-                    <div class="number">3</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௪</div>
-                    <div class="number">4</div>
-    
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௫</div>
-                    <div class="number">5</div>
-    
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௬</div>
-                    <div class="number">6</div>
-    
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௭</div>
-                    <div class="number">7</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௮</div>
-                    <div class="number">8</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௯</div>
-                    <div class="number">9</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">௦</div>
-                    <div class="number">0</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">_</div>
-                    <div class="number">-</div>
-                </button>
-                <button class="keys buttonStyle">
-                    <div class="key">=</div>
-                    <div class="number">+</div>
-                </button>
-                <button class="Delete">Delete</button>
-            </div>
-            <div class="centerPortion">
-                <div class="uyirEzhuthu grid-container">
-                    <button class="keys grid-item uyir_eluthu">அ</button>
-                    <button class="keys grid-item uyir_eluthu">ஆ</button>
-                    <button class="keys grid-item uyir_eluthu">இ</button>
-                    <button class="keys grid-item uyir_eluthu">ஈ</button>
-                    <button class="keys grid-item uyir_eluthu">உ</button>
-                    <button class="keys grid-item uyir_eluthu">ஊ</button>
-                    <button class="keys grid-item uyir_eluthu">எ</button>
-                    <button class="keys grid-item uyir_eluthu">ஏ</button>
-                    <button class="keys grid-item uyir_eluthu">ஐ</button>
-                    <button class="keys grid-item uyir_eluthu">ஒ</button>
-                    <button class="keys grid-item uyir_eluthu">ஓ</button>
-                    <button class="keys grid-item uyir_eluthu">ஔ</button>
-                </div>
-                <div class="sounds grid-container1">
-                    <button class="keys grid1 symbols" id="2">ி</button>
-                    <button class="keys grid1 symbols" id="3">ீ</button>
-                    <button class="keys grid1 symbols" id="4">ு</button>
-                    <button class="keys grid1 symbols" id="5">ூ</button>
-                    <button class="keys grid1 special_symbol">ெ</button>
-                    <button class="keys grid1 special_symbol">ே</button>
-                    <button class="keys grid1 special_symbol">ை</button>
-                    <button class="keys grid1 symbols" id="1"> ா</button>
-                </div>
-                <div class="meiEzhuthukal grid-container2">
-                    <button class="keys grid2 mei_eluthu" data-key="1">க</button>
-                    <button class="keys grid2 mei_eluthu" data-key="2">ங</button>
-                    <button class="keys grid2 mei_eluthu" data-key="3">ச</button>
-                    <button class="keys grid2 mei_eluthu" data-key="4">ஞ</button>
-                    <button class="keys grid2 mei_eluthu" data-key="5">ட</button>
-                    <button class="keys grid2 mei_eluthu" data-key="6">ண</button>
-                    <button class="keys grid2 mei_eluthu" data-key="7">த</button>
-                    <button class="keys grid2 mei_eluthu" data-key="8">ந</button>
-                    <button class="keys grid2 mei_eluthu" data-key="9">ப</button>
-                    <button class="keys grid2 mei_eluthu" data-key="10">ம</button>
-                    <button class="keys grid2 mei_eluthu" data-key="11">ய</button>
-                    <button class="keys grid2 mei_eluthu" data-key="12">ர</button>
-                    <button class="keys grid2 mei_eluthu" data-key="13">ல</button>
-                    <button class="keys grid2 mei_eluthu" data-key="14">வ</button>
-                    <button class="keys grid2 mei_eluthu" data-key="15">ழ</button>
-                    <button class="keys grid2 mei_eluthu" data-key="16">ள</button>
-                    <button class="keys grid2 mei_eluthu" data-key="17">ற</button>
-                    <button class="keys grid2 mei_eluthu" data-key="18">ன</button>
-                    <button class="keys grid2 vada_eluthu">ஜ</button>
-                    <button class="keys grid2 vada_eluthu">ஷ</button>
-                    <button class="keys grid2 vada_eluthu">ஸ</button>
-                    <button class="keys grid2 vada_eluthu">ஹ</button>
-                    <button class="keys grid2 vada_eluthu">க்ஷ</button>
-                    <button class="keys grid2 shree">ஸ்ரீ</button>
-                </div>
-                <div class="div4 grid-container3">
-                    <button class="keys grid3 buttonStyle">
-                        <div class="key">@</div>
-                        <div class="number">!</div>
                     </button>
-                    <button class="Backspace grid3">Backspace</button>
-                    <button class="keys grid3 buttonStyle">
-                        <div class="key">&</div>
-                        <div class="number">%</div>
+                    <button class="keys buttonStyle">
+                        <div class="key">௫</div>
+                        <div class="number">5</div>
+
                     </button>
-                    <button class="Enter grid3 buttonStyle">Enter</button>
-                    <button class="keys grid3 buttonStyle">
-                        <div class="key">: </div>
-                        <div class="number">;</div>
+                    <button class="keys buttonStyle">
+                        <div class="key">௬</div>
+                        <div class="number">6</div>
+
                     </button>
-                    <button class="Shift grid3" id="Shift" >Shift</button>
-                    <div class="div4child grid-container4">
-                        <button class="keys grid4 symbols">்</button>
-                        <button class="keys grid4 ayuthaeluthu">ஃ</button>
-                        <button class="keys grid4 buttonStyle" >
-                            <div class="key">\</div>
-                            <div class="number">|</div>                        
+                    <button class="keys buttonStyle">
+                        <div class="key">௭</div>
+                        <div class="number">7</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">௮</div>
+                        <div class="number">8</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">௯</div>
+                        <div class="number">9</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">௦</div>
+                        <div class="number">0</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">_</div>
+                        <div class="number">-</div>
+                    </button>
+                    <button class="keys buttonStyle">
+                        <div class="key">=</div>
+                        <div class="number">+</div>
+                    </button>
+                    <button class="Delete">Delete</button>
+                </div>
+                <div class="centerPortion">
+                    <div class="uyirEzhuthu grid-container">
+                        <button class="keys grid-item uyir_eluthu">அ</button>
+                        <button class="keys grid-item uyir_eluthu">ஆ</button>
+                        <button class="keys grid-item uyir_eluthu">இ</button>
+                        <button class="keys grid-item uyir_eluthu">ஈ</button>
+                        <button class="keys grid-item uyir_eluthu">உ</button>
+                        <button class="keys grid-item uyir_eluthu">ஊ</button>
+                        <button class="keys grid-item uyir_eluthu">எ</button>
+                        <button class="keys grid-item uyir_eluthu">ஏ</button>
+                        <button class="keys grid-item uyir_eluthu">ஐ</button>
+                        <button class="keys grid-item uyir_eluthu">ஒ</button>
+                        <button class="keys grid-item uyir_eluthu">ஓ</button>
+                        <button class="keys grid-item uyir_eluthu">ஔ</button>
+                    </div>
+                    <div class="sounds grid-container1">
+                        <button class="keys grid1 symbols" id="2">ி</button>
+                        <button class="keys grid1 symbols" id="3">ீ</button>
+                        <button class="keys grid1 symbols" id="4">ு</button>
+                        <button class="keys grid1 symbols" id="5">ூ</button>
+                        <button class="keys grid1 special_symbol">ெ</button>
+                        <button class="keys grid1 special_symbol">ே</button>
+                        <button class="keys grid1 special_symbol">ை</button>
+                        <button class="keys grid1 symbols" id="1"> ா</button>
+                    </div>
+                    <div class="meiEzhuthukal grid-container2">
+                        <button class="keys grid2 mei_eluthu" data-key="1">க</button>
+                        <button class="keys grid2 mei_eluthu" data-key="2">ங</button>
+                        <button class="keys grid2 mei_eluthu" data-key="3">ச</button>
+                        <button class="keys grid2 mei_eluthu" data-key="4">ஞ</button>
+                        <button class="keys grid2 mei_eluthu" data-key="5">ட</button>
+                        <button class="keys grid2 mei_eluthu" data-key="6">ண</button>
+                        <button class="keys grid2 mei_eluthu" data-key="7">த</button>
+                        <button class="keys grid2 mei_eluthu" data-key="8">ந</button>
+                        <button class="keys grid2 mei_eluthu" data-key="9">ப</button>
+                        <button class="keys grid2 mei_eluthu" data-key="10">ம</button>
+                        <button class="keys grid2 mei_eluthu" data-key="11">ய</button>
+                        <button class="keys grid2 mei_eluthu" data-key="12">ர</button>
+                        <button class="keys grid2 mei_eluthu" data-key="13">ல</button>
+                        <button class="keys grid2 mei_eluthu" data-key="14">வ</button>
+                        <button class="keys grid2 mei_eluthu" data-key="15">ழ</button>
+                        <button class="keys grid2 mei_eluthu" data-key="16">ள</button>
+                        <button class="keys grid2 mei_eluthu" data-key="17">ற</button>
+                        <button class="keys grid2 mei_eluthu" data-key="18">ன</button>
+                        <button class="keys grid2 mei_eluthu">ஜ</button>
+                        <button class="keys grid2 mei_eluthu">ஷ</button>
+                        <button class="keys grid2 mei_eluthu">ஸ</button>
+                        <button class="keys grid2 mei_eluthu">ஹ</button>
+                        <button class="keys grid2 mei_eluthu">க்ஷ</button>
+                        <button class="keys grid2 shree">ஸ்ரீ</button>
+                    </div>
+                    <div class="div4 grid-container3">
+                        <button class="keys grid3 buttonStyle">
+                            <div class="key">@</div>
+                            <div class="number">!</div>
                         </button>
+                        <button class="Backspace grid3">Backspace</button>
+                        <button class="keys grid3 buttonStyle">
+                            <div class="key">&</div>
+                            <div class="number">%</div>
+                        </button>
+                        <button class="Enter grid3 buttonStyle">Enter</button>
+                        <button class="keys grid3 buttonStyle">
+                            <div class="key">: </div>
+                            <div class="number">;</div>
+                        </button>
+                        <button class="Shift grid3" id="Shift">Shift</button>
+                        <div class="div4child grid-container4">
+                            <button class="keys grid4 symbols">்</button>
+                            <button class="keys grid4 ayuthaeluthu">ஃ</button>
+                            <button class="keys grid4 buttonStyle">
+                                <div class="key">\</div>
+                                <div class="number">|</div>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer">
-                <button class=" keyset buttonStyle">
-                    <div class="key">{</div>
-                    <div class="number">[</div>                   
-                </button>
-                <button class=" keyset buttonStyle">
-                    <div class="key">}</div>
-                    <div class="number">]</div>
-                </button>
-                <button class=" keyset buttonStyle">
-                    <div class="key">/</div>
-                    <div class="number">(</div>
-                </button>
-                <button class=" keyset buttonStyle">
-                    <div class="key">?</div>
-                    <div class="number">)</div>
-                </button>
-                <button class=" keyset Space_bar buttonStyle">Space</button>
-                <button class=" keyset quote_symbol buttonStyle">
-                    <div class="key">,</div>
-                    <div class="number"><</div>
-                </button>
-                <button class=" keyset question_mark buttonStyle">
-                    <div class="key">.</div>
-                    <div class="number">></div>
-                </button>
-                <button class=" keyset left_arrow buttonStyle">←</button>
-                <div class="arrowKeys ">
-                    <button class="up_arror buttonStyle">↑</button>
-                    <button class="down_arrow buttonStyle">↓</button>
+                <div class="footer">
+                    <button class=" keyset buttonStyle btnStyle">
+                        <div class="key">{</div>
+                        <div class="number">[</div>
+                    </button>
+                    <button class=" keyset buttonStyle">
+                        <div class="key">}</div>
+                        <div class="number">]</div>
+                    </button>
+                    <button class=" keyset buttonStyle">
+                        <div class="key">/</div>
+                        <div class="number">(</div>
+                    </button>
+                    <button class=" keyset buttonStyle">
+                        <div class="key">?</div>
+                        <div class="number">)</div>
+                    </button>
+                    <button class=" keyset Space_bar buttonStyle">Space</button>
+                    <button class=" keyset quote_symbol buttonStyle">
+                        <div class="key">,</div>
+                        <div class="number">
+                    </button>
+                    <button class=" keyset question_mark buttonStyle">
+                        <div class="key">.</div>
+                        <div class="number">></div>
+                    </button>
+                    <button class=" keyset left_arrow buttonStyle">←</button>
+                    <div class="arrowKeys ">
+                        <button class="up_arror buttonStyle">↑</button>
+                        <button class="down_arrow buttonStyle">↓</button>
+                    </div>
+                    <button class=" keyset right_arrow buttonStyle">→</button>
                 </div>
-                <button class=" keyset right_arrow buttonStyle">→</button>
             </div>
         </div>
     </div>
 </body>
 <script src="letters.js"></script>
-
 </html>
