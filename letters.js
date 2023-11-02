@@ -39,16 +39,23 @@ for (let i = 0; i < mei_eluthu.length; i++) {
 // this symbols added in the after the "mei_eluthu"
 for (let i = 0; i < symbols.length; i++) {
     symbols[i].addEventListener("click", (e) => {
-        if (textArea.value.slice(-1) == e.target.innerText || textArea.value == "") {
-            textArea.focus();
-            textArea.value = textArea.value
-        } else {
-            textArea.focus();
-            textArea.value = textArea.value + e.target.innerText
+        for (let j = 0; j < uyir_eluthu.length; j++) {
+            if (textArea.value.slice(-1) == e.target.innerText || textArea.value == "" || uyir_eluthu[j].innerText) {
+                textArea.focus();
+                textArea.value = textArea.value
+            } 
         }
-        suggestion();
+        for (let k = 0; k < mei_eluthu.length; k++) {
+            if (textArea.value.slice(-1) == mei_eluthu[k].innerText) {
+                textArea.value = textArea.value + e.target.innerText
+            } 
+            
+        }
     })
 }
+
+
+
 //code for the "special_symbol" 
 // this special_symbol is added the before the "mei_eluthu"
 let special_symbol_clicked = false;
