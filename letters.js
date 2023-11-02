@@ -48,9 +48,15 @@ for (let i = 0; i < symbols.length; i++) {
         for (let k = 0; k < mei_eluthu.length; k++) {
             if (textArea.value.slice(-1) == mei_eluthu[k].innerText) {
                 textArea.value = textArea.value + e.target.innerText
-            } 
-            
+            }
         }
+        for(let l = 0;  l < special_symbol.length; l++){
+            if (textArea.value.slice(-1) == special_symbol[l].innerText) {
+                textArea.value = textArea.value + e.target.innerText
+                special_symbol[i].style.backgroundColor = "#252424"
+            }
+        }
+
     })
 }
 
@@ -67,8 +73,8 @@ for (let i = 0; i < special_symbol.length; i++) {
         letterArray.push(e.target.innerText);
         for (let j = 0; j < mei_eluthu.length; j++) {
             mei_eluthu[j].addEventListener("click", (e) => {
+                special_symbol[i].style.backgroundColor = "#252424"
                 if (special_symbol_clicked) {
-                    special_symbol[i].style.backgroundColor = "#252424  "
                     letterArray.push(e.target.innerText);
                     letterArray.reverse()
                     let array_to_string_2 = letterArray[1].toString()
@@ -83,6 +89,7 @@ for (let i = 0; i < special_symbol.length; i++) {
     })
 
 }
+
 // code for the "enter key"
 Enter.addEventListener('click', () => {
     textArea.focus();
